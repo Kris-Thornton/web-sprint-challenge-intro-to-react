@@ -1,17 +1,30 @@
 // Write your Character component here
 import React from 'react'
+import styled from 'styled-components'
+
+
+
+const CharacterTitle = styled.h2`
+display: flex;
+padding-left: 2em;
+color: darkred;
+`
+
+
 
 function Character(props) {
   return (
+    
     <div>
-        <h2>{props.item.name}</h2>
+        <CharacterTitle>{props.item.name}</CharacterTitle>
         <div>
-           <img src ={{url: props.item.homeworld}} />
+          
+           <h3>HomeWorld: {props.item.homeworld}</h3>
             <ul>
                 Birth Year: {props.item.birth_year},<br></br> 
                 Mass: {props.item.mass}<br></br>
                 Height: {props.item.height}<br></br>
-                StartShips:<img src ={{url: props.item.starships}} />
+                StarShips:{props.item.starships} 
                 
             </ul> 
         </div>

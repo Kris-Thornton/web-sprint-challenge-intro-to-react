@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios'
-import Character from './components/Character'
-
+import axios from 'axios';
+import Character from './components/Character';
+import styled from 'styled-components';
 
 
 
@@ -9,6 +9,8 @@ const App = () => {
 
   const [characterData, setCharacterData] = useState([]);
   
+  
+
   
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
@@ -27,9 +29,18 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
+const Title = styled.h1`
+    color: #443e3e;
+    text-shadow: 1px 1px 5px #fff;
+  `;
+
   return (
+    
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <div>
+        <Title>Characters</Title>
+      </div>
+      
       <div>
         {characterData.map((item) => {
           return (
