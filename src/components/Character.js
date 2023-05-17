@@ -8,15 +8,21 @@ const CharacterTitle = styled.h2`
 display: flex;
 padding-left: 2em;
 color: darkred;
-`
 
+`
+const WrapperTitle = styled.div`
+border: 1px solid red;`
 
 
 function Character(props) {
+
+
   return (
     
-    <div>
+    <WrapperTitle>
+      
         <CharacterTitle>{props.item.name}</CharacterTitle>
+        
         <div>
           
            <h3>HomeWorld: {props.item.homeworld}</h3>
@@ -29,7 +35,7 @@ function Character(props) {
             </ul> 
         </div>
         
-    </div>
+    </WrapperTitle>
   )
 }
 

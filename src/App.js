@@ -8,9 +8,7 @@ import styled from 'styled-components';
 const App = () => {
 
   const [characterData, setCharacterData] = useState([]);
-  
-  
-
+  const [buttonCard, setButtonCard] = useState(false)
   
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
@@ -41,10 +39,21 @@ const Title = styled.h1`
         <Title>Characters</Title>
       </div>
       
-      <div>
+      <div >
+        
         {characterData.map((item) => {
           return (
-            <Character item={item}/>
+            <>
+          <div> 
+            {
+            buttonCard?<p>{<Character item={item} />}</p>:null
+            }
+            <button onClick={() => setButtonCard(!buttonCard)}>Open/Close</button>
+        </div>
+            <div>
+              
+            </div>
+            </>
           )
         })}
       </div>
